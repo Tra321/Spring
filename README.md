@@ -63,8 +63,6 @@ jobs:
    - ✅ 选中 "Read and write permissions"  
    - ✅ 勾选 "Allow GitHub Actions to create and approve pull requests"  
 
-![Workflow Permissions](https://docs.github.com/assets/cb-36544/images/help/settings/actions-workflow-permissions-repository.png)
-
 ---
 
 ### 步骤3：验证工作流程
