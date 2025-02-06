@@ -1,0 +1,28 @@
+name: Springit
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '12 0 * * *'  # 每天 UTC 时间 00:00 触发
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 需要写权限来推送更改
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "Tra321"
+        git config --global user.email "atraa0621@gmail.com"
+
+    - name: Auto-green 
+      run: |
+        git commit --allow-empty -m "Auto-commit by GitHub Actions"
+        git push
