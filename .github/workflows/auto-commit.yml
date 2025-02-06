@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '12 0 * * *'  # 每天 UTC 时间 00:00 触发
+    - cron: '0 0 * * *'  # 每天 UTC 时间 00:00 触发
 
 jobs:
   auto-commit:
@@ -16,13 +16,19 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Configure Git
       run: |
         git config --global user.name "Tra321"
         git config --global user.email "atraa0621@gmail.com"
 
+    - name: Pull latest changes
+      run: git pull origin master  # 拉取远程 master 分支的最新更改
+
     - name: Auto-green 
       run: |
+        git pull --rebase origin master
         git commit --allow-empty -m "Auto-commit by GitHub Actions"
-        git push
+        git push origin master  # 推送到远程 master 分支
