@@ -25,7 +25,9 @@ jobs:
         git config --global user.email "atraa0621@gmail.com"
 
     - name: Pull latest changes
-      run: git pull origin master  # 拉取远程 master 分支的最新更改
+      run: |
+        git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git pull origin master  # 拉取远程 master 分支的最新更改
 
     - name: Auto-green 
       run: |
