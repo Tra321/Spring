@@ -41,8 +41,8 @@ jobs:
 
     - name: Configure Git 
       run: | 
-        git config --global user.name "Tra321" 
-        git config --global user.email "atraa0621@gmail.com" 
+        git config --global user.name "usename" 
+        git config --global user.email "useemali" 
 
     - name: Pull latest changes 
       run: | 
