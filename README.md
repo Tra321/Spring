@@ -41,8 +41,8 @@ jobs:
 
     - name: Configure Git 
       run: | 
-        git config --global user.name "usename" 
-        git config --global user.email "useemali" 
+        git config --global user.name "username" 
+        git config --global user.email "useremali" 
 
     - name: Pull latest changes 
       run: | 
@@ -110,4 +110,4 @@ sequenceDiagram
 
 > 📌 **提示**：首次运行可能需要等待定时触发，或手动执行`git push`到master分支测试  
 
-[查看示例提交记录](https://github.com/yourusername/yourrepo/commits/master) | [GitHub Actions文档](https://docs.github.com/actions)
+[GitHub Actions文档](https://docs.github.com/actions)
