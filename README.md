@@ -1,8 +1,5 @@
 # Auto-Commit Bot with GitHub Actions 🤖
 
-![GitHub Actions Workflow](https://img.shields.io/github/actions/workflow/status/yourusername/yourrepo/springit.yml?label=Auto-Commit%20Bot) 
-![Last Commit](https://img.shields.io/github/last-commit/yourusername/yourrepo?label=Last%20Auto-Commit)
-
 自动维护项目活跃度的GitHub Actions机器人，每日定时提交空commit，支持手动触发。
 
 ## 功能特性 ✨
