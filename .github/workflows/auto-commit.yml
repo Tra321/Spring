@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 时间 00:00 触发
+    - cron: '0 */5 * * *'  # 每5小时触发一次
 
 jobs:
   auto-commit:
@@ -29,6 +29,10 @@ jobs:
         git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git pull origin master  # 拉取远程 master 分支的最新更改
 
+    - name: Random delay
+      run: sleep $((RANDOM % 1800)) # 随机延迟0-30分钟
+      shell: bash
+      
     - name: Auto-green 
       run: |
         git pull --rebase origin master
